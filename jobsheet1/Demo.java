@@ -1,39 +1,37 @@
-public class Demo {
+public class Demo { // Class Utama
     public static void main(String[] args) {
-        
         System.out.println("=== OBJEK TAS ===");
         Tas tas = new Tas();
-        tas.setMerk("Eiger"); // method 1
-        tas.setWarna("Hitam"); // method 2
-        tas.cetakInfo(); // method 3
+        tas.setMerk("Eiger"); 
+        tas.setWarna("Hitam"); 
+        tas.cetakInfo(); 
 
-        System.out.println("\n=== OBJEK JAM TANGAN ===");
-        JamTangan jam = new JamTangan();
-        jam.setMerk("Casio"); // method 1
-        jam.nyalakan(); // method 2
-        jam.cetakInfo(); // method 3
+        System.out.println("\n=== OBJEK AIR MINERAL ===");
+        AirMineral air = new AirMineral();
+        air.setMerk("Aqua");
+        air.setVolume(600);
+        air.cetakInfo();
 
-        System.out.println("\n=== OBJEK SEPATU (PARENT) ===");
-        Sepatu sepatu = new Sepatu();
-        sepatu.setMerk("Bata"); // method 1
-        sepatu.setUkuran(42); // method 2
-        sepatu.cetakInfo(); // method 3
+        System.out.println("\n=== OBJEK BUKU (PARENT) ===");
+        Buku buku = new Buku();
+        buku.setJudul("Buku Umum");
+        buku.setJumlahHalaman(100);
+        buku.cetakInfo();
 
-        System.out.println("\n=== OBJEK SEPATU OLAHRAGA (CHILD 1) ===");
-        SepatuOlahraga sepatuOr = new SepatuOlahraga();
-        sepatuOr.setMerk("Nike"); // method dari parent
-        sepatuOr.setUkuran(43); // method dari parent
-        sepatuOr.setJenisOlahraga("Basket"); // method 1 (child)
-        sepatuOr.ikatTali(); // method 2 (child)
-        sepatuOr.cetakInfo(); // method 3 (child)
+        System.out.println("\n=== OBJEK BUKU TULIS (CHILD 1) ===");
+        BukuTulis bukuT = new BukuTulis();
+        bukuT.setJudul("Catatan PBO"); // method dari induk
+        bukuT.setJumlahHalaman(50); // method dari induk
+        bukuT.setMerk("Sinar Dunia"); // method sendiri
+        bukuT.tulisCatatan(); 
+        bukuT.cetakInfo();
 
-        System.out.println("\n=== OBJEK SEPATU PANTOFEL (CHILD 2) ===");
-        SepatuPantofel sepatuPf = new SepatuPantofel();
-        sepatuPf.setMerk("Hush Puppies"); // method dari parent
-        sepatuPf.setUkuran(41); // method dari parent
-        sepatuPf.setBahan("Kulit Asli"); // method 1 (child)
-        sepatuPf.semirSepatu(); // method 2 (child)
-        sepatuPf.cetakInfo(); // method 3 (child)
+        System.out.println("\n=== OBJEK BUKU CETAK (CHILD 2) ===");
+        BukuCetak bukuC = new BukuCetak();
+        bukuC.setJudul("Pemrograman Java"); // method dari induk
+        bukuC.setJumlahHalaman(300); // method dari induk
+        bukuC.setMataPelajaran("PBO"); // method sendiri
+        bukuC.bacaBuku();
+        bukuC.cetakInfo();
     }
 }
-
